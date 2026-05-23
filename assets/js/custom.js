@@ -1,4 +1,4 @@
-$("#adForm").on('submit',(function(e){
+$(".bn-form").on('submit',(function(e){
 e.preventDefault();
 var url="_validation";
 var data = new FormData(this);
@@ -11,41 +11,7 @@ $(".rmsg").html('<div class="alert alert-danger">Something wrong try later</div>
 },
 success: function(res){
 $('.actionbtn').removeClass('eventbtn');
-if(res.status){$("#adForm").trigger("reset");location.href="thank-you";}else{$(".rmsg").html(res.msg);}
-}
-});
-}));
-$("#fForm").on('submit',(function(e){
-e.preventDefault();
-var url="_validation";
-var data = new FormData(this);
-data.append("operation","addnewenq");
-$.ajax({type:"POST",url:url,data:data,contentType:false,cache:false,processData:false,dataType:"json",timeout:10000, 
-beforeSend: function(){$('.actionbtn').addClass('eventbtn');},
-error:function(jqXHR,textStatus,errorThrown){
-$('.actionbtn').removeClass('eventbtn');
-$(".rmsg").html('<div class="alert alert-danger">Something wrong try later</div>');
-},
-success: function(res){
-$('.actionbtn').removeClass('eventbtn');
-if(res.status){$("#fForm").trigger("reset");location.href="thank-you";}else{$(".rmsg").html(res.msg);}
-}
-});
-}));
-$("#popForm").on('submit',(function(e){
-e.preventDefault();
-var url="_validation";
-var data = new FormData(this);
-data.append("operation","addnewenq");
-$.ajax({type:"POST",url:url,data:data,contentType:false,cache:false,processData:false,dataType:"json",timeout:10000, 
-beforeSend: function(){$('.actionbtn').addClass('eventbtn');},
-error:function(jqXHR,textStatus,errorThrown){
-$('.actionbtn').removeClass('eventbtn');
-$(".rmsg").html('<div class="alert alert-danger">Something wrong try later</div>');
-},
-success: function(res){
-$('.actionbtn').removeClass('eventbtn');
-if(res.status){$("#popForm").trigger("reset");location.href="thank-you";}else{$(".rmsg").html(res.msg);}
+if(res.status){$(".bn-form").trigger("reset");location.href="thank-you";}else{$(".rmsg").html(res.msg);}
 }
 });
 }));

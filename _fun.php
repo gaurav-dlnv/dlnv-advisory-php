@@ -12,7 +12,7 @@ function CaptchaCode(){
   $_SESSION['capcode'] = $capcode;
   $img   = imagecreatetruecolor(55, 35);
   $color = imagecolorallocate($img, 255, 255, 255);
-  $bg    = imagecolorallocate($img, 61, 142, 185);
+  $bg    = imagecolorallocate($img, 29, 78, 216);
   imagefill($img, 0, 0, $bg);
   imagestring($img, 10, 6, 10,$capcode, $color);
   ob_start ();
