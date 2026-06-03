@@ -15,6 +15,10 @@ ul.myul li{
 }
 </style>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59Q3XMR5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <?php include '_menu.php'; ?>
 <section class="padding-top padding-bottom">
 <div class="container">

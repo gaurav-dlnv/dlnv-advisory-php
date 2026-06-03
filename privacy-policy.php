@@ -8,6 +8,10 @@
 h2{font-size:18px}ul.my-ul{list-style:disc;margin-left:40px}ul.my-ul1{list-style:lower-roman;margin-left:40px}
 </style>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59Q3XMR5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->   
 <?php include '_menu.php'; ?>
 <section class="padding-top padding-bottom">
 <div class="container">

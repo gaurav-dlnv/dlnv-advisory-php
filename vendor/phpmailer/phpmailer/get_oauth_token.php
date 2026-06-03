@@ -48,7 +48,12 @@ use Stevenmaguire\OAuth2\Client\Provider\Microsoft;
 if (!isset($_GET['code']) && !isset($_GET['provider'])) {
     ?>
 <html>
-<body>Select Provider:<br>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59Q3XMR5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->    
+Select Provider:<br>
 <a href='?provider=Google'>Google</a><br>
 <a href='?provider=Yahoo'>Yahoo</a><br>
 <a href='?provider=Microsoft'>Microsoft/Outlook/Hotmail/Live/Office365</a><br>
