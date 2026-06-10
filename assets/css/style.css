@@ -13014,4 +13014,106 @@ align-items: flex-start;
 gap: 1rem;
 }
 }
+.d-mob{
+display: none!important;
+}
+.d-desk{
+display: block!important;
+}
+@media screen and (max-width: 767px) {
+.d-mob{
+display: block!important;
+}
+.d-desk{
+display: none!important;
+}
+}
+.advisor-card{
+padding: 20px;
+border-radius: 10px;
+background: #eaeaeaa8;
+border-top: 2px solid #1e86db;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+.advisor-card.analyst{
+border-top: 2px solid #673ab7;
+}
+.advisor-card .advisor-icon {
+background: #ffffff;
+border: 1px solid #1e86db;
+padding: 10px;
+font-size: 25px;
+font-weight: bold;
+border-radius: 50%;
+width: 65px;
+height: 65px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.advisor-card.analyst .advisor-icon {
+border: 1px solid #673ab7;
+}
+.advisor-card .advisor-desc  {
+min-width: 230px;
+}
+.advisor-card .advisor-desc .advisor-name {
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 5px;
+text-transform: uppercase;
+}
+.advisor-card .advisor-desc .tag{
+background: #d0eaff70;
+display: flex;
+align-items: center;
+gap: 7px;
+border-radius: 7px;
+font-size: 11px;
+font-weight: bold;
+color: #1e86db;
+margin: 5px 0;
+padding: 5px;
+width: max-content;
+}
+.advisor-card .advisor-desc .tag img{
+width: 18px;
+}
+.advisor-card.analyst .advisor-desc .advisor-name  {
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 5px;
+}
+.advisor-card.analyst .advisor-desc .tag {
+background: #341b6129;
+display: flex;
+align-items: center;
+border-radius: 7px;
+font-size: 12px;
+color: #673bb7;
+}
+.advisor-card .advisor-desc .plan-desc {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.advisor-card .advisor-desc .plan-desc i.icon {
+font-size: 16px;
+color: #1e86db;
+margin-right: 10px;
+}
+.advisor-card.analyst .advisor-desc .plan-desc i.icon {
+color: #673bb7;
+}
+.advisor-card .advisor-desc .plan-desc p {
+font-size: 10px;
+font-weight: bold;
+color: #212121;
+}
+.advisor-card .advisor-desc .plan-desc p old {
+font-size: 10px;
+color: #8b8b8b;
+}
 /*# sourceMappingURL=style.css.map */

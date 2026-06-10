@@ -21,10 +21,6 @@ details[open] .acc-icon{transform:rotate(180deg)}
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59Q3XMR5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <?php include '_menu.php'; ?>
 <section class="banner padding">
 <div class="container">
@@ -35,26 +31,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="d-flex flex-wrap gap-2 mb-4">
 <span class="chip bg-blue">Technology Platform</span>
 <span class="chip bg-emerald">Verified SEBI IAs &amp; RAs</span>
-<span class="chip bg-slate">App-only Research View</span>
+<span class="chip bg-slate d-desk">App-only Research View</span>
 </div>
 <h1 class="banner__content-heading mb-2">Discover research from <br/><span>SEBI Registered IAs & RAs.</span></h1>
 <p class="banner__content-moto heading mb-1"><?= AppInfo()->BrandName; ?> is a technology platform where SEBI Registered IAs and RAs publish their independent research. Subscribers view published trades and research only inside the <?= AppInfo()->BrandName; ?> app. We do not provide tips or advice — we are a software platform.</p>
 <hr class="separator">
-<div class="contact-item btngroup d-flex mt-4 mb-4 gap-3">
-<div class="call-item">
-<div class="icon">
-<i class="fab fa-whatsapp"></i>
-</div>
-<div class="content">
-<span>Enquiry</span>
-<h6 class="mb-0">
-<a href="<?= AppInfo()->Whatsapp; ?>" target="_blank">WhatsApp Now</a>
-</h6>
-</div>
-</div>
-</div>
-<hr class="separator">
 <p class="banner__content-moto heading mb-1">Investments in securities are subject to market risks. Past performance of any IA/RA on the platform is not indicative of future returns. Please read all scheme/offer related documents carefully before subscribing.</p>
+
+<div class="advisor-slider swiper mt-4">
+<div class="swiper-wrapper">
+<!-- Slide 1 -->
+<div class="swiper-slide">
+<div class="advisor-card advisor">
+<span class="advisor-icon">MS</span>
+<span class="advisor-desc">
+<h4 class="advisor-name">Manish Shah</h4>
+<div class="tag"><img src="assets/images/private-account.png" alt=""> SEBI REGISTERED ADVISOR</div>
+<div class="plan-desc">
+<span class="d-flex justify-content-between align-items-center">
+<i class="fas fa-shield-alt icon"></i>
+<div>
+<p><old>SEBI No:</old></p>
+<p>INA000016180</p>
+</div>
+</span>
+<span class="d-flex justify-content-between align-items-center">
+<i class="fa fa-calendar-alt icon"></i>
+<div>
+<p><old>Plan start from:</old></p>
+<p>₹ 2,999/-</p>
+</div>
+</span>
+</div>
+</span>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="swiper-slide">
+<div class="advisor-card analyst">
+<span class="advisor-icon">AB</span>
+<span class="advisor-desc">
+<h4 class="advisor-name">Amit Bhattacharjee</h4>
+<div class="tag"><img src="assets/images/statisctics.png" alt=""> SEBI RESEARCH ANALYST</div>
+<div class="plan-desc">
+<span class="d-flex justify-content-between align-items-center">
+<i class="fas fa-shield-alt icon"></i>
+<div>
+<p><old>SEBI No:</old></p>
+<p>INH000019886</p>
+</div>
+</span>
+<span class="d-flex justify-content-between align-items-center">
+<i class="fa fa-calendar-alt icon"></i>
+<div>
+<p><old>Plan start from:</old></p>
+<p>₹ 1,000/-</p>
+</div>
+</span>
+</div>
+</span>
+</div>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 <div class="col-lg-5 col-md-12">

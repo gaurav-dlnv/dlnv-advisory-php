@@ -67,7 +67,6 @@ A technology platform connecting subscribers with SEBI Registered IAs / RAs. We 
 </div>
 </footer>
 <button class="scroltop scrollToTop scrollToTop--style1"><i class="fa fa-angle-double-up"></i></button>
-<?php include '_wp-widget.php'; ?>
 
 <div class="bottom-info-fixed">
 <div class="container">
@@ -126,11 +125,11 @@ $(function () {
         $('#popmodal').modal('hide');
     });
 });
-// setTimeout(function(){
-// $(document).ready(function(){
-// $("#popmodal").modal('show');
-// });
-// }, 6000);
+setTimeout(function(){
+$(document).ready(function(){
+$("#popmodal").modal('show');
+});
+}, 6000);
 
 $(".changecapcode").on("click",function(){
 var url="_validation";

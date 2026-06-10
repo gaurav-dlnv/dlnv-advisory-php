@@ -1,7 +1,7 @@
 <?php debug_backtrace() || header("Location: 404");?>
  <div id="cg_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#2089dc"/></svg></div>
 
-<div class="sebi-strip">
+<!-- <div class="sebi-strip">
 <div class="container">
 <div class="d-flex align-items-start flex-start gap-2">
 <i class="fa fa-exclamation-triangle text-warning mt-1"></i>
@@ -10,7 +10,7 @@
 </p>
 </div>
 </div>
-</div>
+</div> -->
 
 <header class="header-section header-section--style1">
 <div class="header-bottom">
