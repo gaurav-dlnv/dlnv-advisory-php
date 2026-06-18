@@ -5,7 +5,7 @@ require_once("_fun.php");
 function AppInfo(){
 $app = array(
 'CopyRight'       => 'Protective Collar AI Technology Private Limited',
-'BrandName'       => 'Dailytrades',
+'BrandName'       => 'DailyTrades',
 'DomainName'       => 'dailytrades.in',
 'BrandURL'        => 'https://www.dailytrades.in',
 'Whatsapp'        => 'https://api.whatsapp.com/send?phone=919220398500&amp;text=Hello! I have a Query',

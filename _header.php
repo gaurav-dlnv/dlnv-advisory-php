@@ -4,8 +4,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="https://www.dailytrades.in/">
-<meta name="keywords" content="DailyTrades, trading, online trading, opinion, share opinion, DailyTrades india, polls.">
+
+<meta name="keywords" content="<?= AppInfo()->BrandName; ?>, trading, online trading, opinion, share opinion, <?= AppInfo()->BrandName; ?> india, polls.">
 <meta name="description" content="We are the best transparent advisors market place in India, we help you to connect with registered professional advisors for all your financial needs.">
+
+<meta property="og:title" content="<?= AppInfo()->BrandName; ?> | We are the best transparent advisors market place in India, we help you to connect with registered professional advisors for all your financial needs.">
+<meta property="og:type" content="website">
+
+<meta name="twitter:title" content="<?= AppInfo()->BrandName; ?> | We are the best transparent advisors market place in India, we help you to connect with registered professional advisors for all your financial needs.">
+
 <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">

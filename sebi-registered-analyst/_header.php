@@ -1,0 +1,33 @@
+<?php debug_backtrace() || header("Location: 404");?>
+<base href="https://advisory.dailytrades.in/sebi-registered-analyst/">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="https://www.dailytrades.in/">
+
+<meta name="description" content="Explore research reports, market insights, equity research and trading analysis published by SEBI Registered Research Analysts on <?= AppInfo()->BrandName; ?>.">
+
+<meta name="keywords" content="SEBI Registered Research Analyst, Research Analyst, Stock Research Analyst, Equity Research, Equity Research Reports, Stock Market Research, Share Market Research, Research Reports, Market Analysis, Stock Analysis, Trading Research, Technical Analysis, Fundamental Analysis, Stock Market Insights, Research Platform, Stock Market Research Platform, Market Research Reports, Equity Market Research, Trading Analysis, Investment Research, <?= AppInfo()->BrandName; ?>">
+
+<meta property="og:title" content="SEBI Registered Research Analyst | Research Reports & Market Insights">
+<meta property="og:description" content="Explore research reports, market insights, equity research and trading analysis published by SEBI Registered Research Analysts on <?= AppInfo()->BrandName; ?>.">
+<meta property="og:type" content="website">
+
+<meta name="twitter:title" content="SEBI Registered Research Analyst | Research Reports & Market Insights">
+<meta name="twitter:description" content="Explore research reports, market insights, equity research and trading analysis published by SEBI Registered Research Analysts on <?= AppInfo()->BrandName; ?>.">
+
+<link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/aos.css">
+<link rel="stylesheet" type="text/css" href="assets/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-59Q3XMR5');</script>
+<!-- End Google Tag Manager -->
