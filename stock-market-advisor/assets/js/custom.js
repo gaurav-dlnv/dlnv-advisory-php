@@ -3,7 +3,7 @@ e.preventDefault();
 var form=this;
 var data=new FormData(form);
 data.append('operation','addnewenq');
-$.ajax({type:'POST',url:'_validation',data:data,contentType:false,cache:false,processData:false,dataType:'json',timeout:10000,
+$.ajax({type:'POST',url:'_validation.php',data:data,contentType:false,cache:false,processData:false,dataType:'json',timeout:10000,
 beforeSend:function(){$('.actionbtn').addClass('eventbtn');$(form).find('.rmsg').html('');},
 error:function(){$('.actionbtn').removeClass('eventbtn');$(form).find('.rmsg').html('<div class="alert alert-danger">Something wrong, please try later.</div>');},
 success:function(res){

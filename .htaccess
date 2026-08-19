@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# Do not send the CAPTCHA/API endpoint through extensionless URL rewriting.
+RewriteRule ^_validation(?:\.php)?$ - [L]
+
 # Remove trailing slash
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)/$ /$1 [R=301,L]
