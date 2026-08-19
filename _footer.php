@@ -144,7 +144,10 @@ $.ajax({
     else{$(".capmsg").html('Error Occured Try Later');}
   }, 
   success:function(res){
-    if(res.status){$('.capimg').attr('src',res.msg);}
+    if(res.status){
+        $('.capimg').attr('src', res.msg);
+        $('input[name="enqcode"]').val('');
+    }
   }
 }); 
 });

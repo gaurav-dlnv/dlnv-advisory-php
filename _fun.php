@@ -20,6 +20,6 @@ function CaptchaCode(){
   imagedestroy($img);
   $data = ob_get_contents ();
   ob_end_clean ();
-  $image = "data:image/jpeg;base64,".base64_encode($data);
+  $image = "data:image/png;base64," . base64_encode($data);
   return $image;
 }
