@@ -14,8 +14,7 @@ $phone      = (!empty($_POST['phone']))?FilterInput(strval($_POST['phone'])):nul
 $email      = (!empty($_POST['email']))?FilterInput(strval($_POST['email'])):null;
 $service    = (!empty($_POST['service']))?FilterInput(strval($_POST['service'])):null;
 $state    = (!empty($_POST['state']))?FilterInput(strval($_POST['state'])):null;
-$enqcode    = (!empty($_POST['enqcode']))?FilterInput(strval($_POST['enqcode'])):null;
-$sescode  = (!empty($_SESSION['capcode']))?CleanInput(FilterInput($_SESSION['capcode'])):null;
+
 
 if (empty($name) OR empty($phone) OR empty($email)) {
 echo $response = json_encode(array("status" => false,"msg"   => '<div class="alert alert-danger">Field is Empty</div>'));
@@ -39,18 +38,6 @@ die();
 }
 if(!preg_match('/^[1-9]{1}[0-9]{9}$/',$phone)) {
 echo $response = json_encode(array("status" => false,"msg"   => '<div class="alert alert-danger">Phone Number is Not Valid</div>'));
-die();
-}
-if(empty(trim($enqcode))){
-echo $response = json_encode(array("status" => false,"msg"   => '<div class="alert alert-warning">Please enter Captcha Code</div>'));
-die();
-}
-if (empty($sescode)){
-echo $response = json_encode(array("status" => false,"msg"   => '<div class="alert alert-warning">Something Wrong!!!</div>'));
-die();
-}
-if ($enqcode != $sescode) {
-echo $response = json_encode(array("status" => false,"msg"   => '<div class="alert alert-danger">Wrong Captcha Code</div>'));
 die();
 }
 
@@ -138,6 +125,7 @@ try {
     // Sender & Recipient
     $mail->setFrom('support@dailytrades.in', AppInfo()->BrandName);
     $mail->addAddress('support@dailytrades.in');
+    // $mail->addAddress('sushantaroy595@gmail.com');
     // Content
     $mail->isHTML(true);
     $mail->Subject    = "Contact Enquiry | ". AppInfo()->BrandName ." ".$date;

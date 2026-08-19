@@ -4,7 +4,7 @@
 <head>
 <title>Thank You - <?= AppInfo()->BrandName; ?></title> 
 <?php include '_header.php'; ?>
-<style type="text/css">body{background-color: #fff;}.header-section--style3{background-color: var(--header-bg-color)}section{height: 80vh;display: flex;align-items: center;justify-content: center;}.error__inner{background-color:transparent}.error__thumb img{max-width: 350px}.error__content p{font-weight: normal;color: #000;font-size: 20px;}.footer__top--style2{padding-block-start:100px}@media (max-width: 768px){.error__thumb img{max-width: 150px}}.padding-top {padding-block-start: 80px;}.padding-bottom {padding-block-end: 80px;}</style>
+<style type="text/css">body{background-color: #fff;}.header-section--style3{background-color: var(--header-bg-color)}section{height: 80vh;display: flex;align-items: center;justify-content: center;}.error__inner{background-color:transparent}.error__thumb{display: flex;justify-content: center;align-items: center;}.error__thumb img{max-width: 350px}.error__content p{font-weight: normal;color: #000;font-size: 20px;}.footer__top--style2{padding-block-start:100px}@media (max-width: 768px){.error__thumb img{max-width: 150px}}.padding-top {padding-block-start: 80px;}.padding-bottom {padding-block-end: 80px;}</style>
 </head>
 <body> 
 <!-- Google Tag Manager (noscript) -->
