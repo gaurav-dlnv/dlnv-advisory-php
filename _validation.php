@@ -132,7 +132,7 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'support@dailytrades.in';
-    $mail->Password = 'XXXX XXXXX'; 
+    $mail->Password = 'rgev uxjf hfcx yanp'; 
     $mail->SMTPSecure = 'ssl'; // or 'tls' if using port 587
     $mail->Port = 465;
     // Sender & Recipient
