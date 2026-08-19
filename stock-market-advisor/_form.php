@@ -66,6 +66,17 @@
 <option value="Puducherry">Puducherry</option>
 </select>
 </div>
+<div class="col-12">
+<div class="capgroup">
+<input class="form-control" type="text" name="enqcode" placeholder="Enter Captcha Code" autocomplete="off" inputmode="numeric" maxlength="5" required>
+<?php if (!empty($cap)) : ?>
+<img src="<?= htmlspecialchars($cap, ENT_QUOTES, 'UTF-8'); ?>" alt="Captcha" class="capimg">
+<?php endif; ?>
+<button type="button" class="changecapcode" aria-label="Refresh Captcha" title="Refresh Captcha"><i class="fa fa-refresh"></i></button>
+</div>
+<div class="capmsg mt-1"></div>
+</div>
+
 <div class="col-md-12 form-group d-flex align-items-start">
 <div class="form-group col-auto myCheck">
 <input type="checkbox" name="myCheck" checked="" required>

@@ -131,24 +131,12 @@ $("#popmodal").modal('show');
 });
 }, 6000);
 
-$(".changecapcode").on("click",function(){
-var url="_validation";
-$.ajax({
-  type:"POST",
-  url:url,
-  data:{"operation":"captchacode"},
-  dataType:"json",
-  beforeSend:function(){},
-  error:function(jqXHR,textStatus,errorThrown){
-    if(textStatus==="timeout"){$(".capmsg").html('Request Could Not Reach');}
-    else{$(".capmsg").html('Error Occured Try Later');}
-  }, 
-  success:function(res){
-    if(res.status){
-        $('.capimg').attr('src', res.msg);
-        $('input[name="enqcode"]').val('');
-    }
-  }
-}); 
+$(document).on('click','.changecapcode',function(){
+var buttons=$('.changecapcode'); buttons.prop('disabled',true);
+$.ajax({type:'POST',url:'_validation',data:{operation:'captchacode'},dataType:'json',timeout:10000,
+success:function(res){if(res.status&&res.msg){$('.capimg').attr('src',res.msg);$('input[name="enqcode"]').val('');$('.capmsg').html('');}else{$('.capmsg').html('<span class="text-danger">Unable to refresh captcha.</span>');}},
+error:function(){$('.capmsg').html('<span class="text-danger">Unable to refresh captcha. Try again.</span>');},
+complete:function(){buttons.prop('disabled',false);}
+});
 });
 </script>

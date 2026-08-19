@@ -1,25 +1,28 @@
-<?php
-function FilterInput($input){
-    $input = strip_tags(stripslashes(trim($input)));
-    return $input;
-}
-function CleanInput($string) {
-   //$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-   return preg_replace('/[^A-Za-z0-9\- ]/', '', $string); // Removes special chars.
-}
-function CaptchaCode(){
-  $capcode = substr(str_shuffle('0123456789'),0,rand(3,5));
-  $_SESSION['capcode'] = $capcode;
-  $img   = imagecreatetruecolor(55, 35);
-  $color = imagecolorallocate($img, 255, 255, 255);
-  $bg    = imagecolorallocate($img, 29, 78, 216);
-  imagefill($img, 0, 0, $bg);
-  imagestring($img, 10, 6, 10,$capcode, $color);
-  ob_start ();
-  imagepng($img);
-  imagedestroy($img);
-  $data = ob_get_contents ();
-  ob_end_clean ();
-  $image = "data:image/jpeg;base64,".base64_encode($data);
-  return $image;
+<?php
+function FilterInput($input){
+    if (is_array($input)) return '';
+    return strip_tags(stripslashes(trim((string)$input)));
+}
+function CleanInput($string) {
+    return preg_replace('/[^A-Za-z0-9\- ]/', '', (string)$string);
+}
+function CaptchaCode(){
+    if (session_status() === PHP_SESSION_NONE) session_start();
+    $characters='23456789';
+    $capcode='';
+    for($i=0;$i<5;$i++) $capcode.=$characters[random_int(0,strlen($characters)-1)];
+    $_SESSION['capcode']=$capcode;
+
+    $lines='';
+    for($i=0;$i<7;$i++){
+        $x1=random_int(0,109); $y1=random_int(5,40);
+        $x2=random_int(0,109); $y2=random_int(5,40);
+        $lines.='<line x1="'.$x1.'" y1="'.$y1.'" x2="'.$x2.'" y2="'.$y2.'" stroke="#b4cdff" stroke-width="1" opacity=".75"/>';
+    }
+    $svg='<svg xmlns="http://www.w3.org/2000/svg" width="110" height="45" viewBox="0 0 110 45">'
+        .'<rect width="110" height="45" rx="4" fill="#1d4ed8"/>'
+        .$lines
+        .'<text x="55" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="3" fill="#fff">'.htmlspecialchars($capcode,ENT_QUOTES,'UTF-8').'</text>'
+        .'</svg>';
+    return 'data:image/svg+xml;base64,'.base64_encode($svg);
 }

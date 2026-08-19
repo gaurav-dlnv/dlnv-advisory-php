@@ -1,13 +1,26 @@
 <?php
 require_once("_top.php");
-date_default_timezone_set('Asia/Calcutta');
+date_default_timezone_set('Asia/Kolkata');
 $date = date('m/d/Y h:i:s a', time());
-$operation = (!empty($_POST['operation']))?FilterInput($_POST['operation']):null;
-if (empty($operation)){die();}
-elseif ($operation=='captchacode') {
-    echo  json_encode(['status'=>true,'msg'=>CaptchaCode()]);
+$operation = (!empty($_POST['operation'])) ? FilterInput($_POST['operation']) : null;
+if (empty($operation)) { die(); }
+elseif ($operation === 'captchacode') {
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['status'=>true,'msg'=>CaptchaCode()]);
+    exit;
 }
-elseif ($operation=="addnewenq") {
+elseif ($operation === 'addnewenq') {
+$enqcode = (!empty($_POST['enqcode'])) ? strtoupper(FilterInput($_POST['enqcode'])) : '';
+$sessionCode = (!empty($_SESSION['capcode'])) ? strtoupper((string)$_SESSION['capcode']) : '';
+if ($enqcode === '' || $sessionCode === '') {
+    echo json_encode(['status'=>false,'msg'=>'<div class="alert alert-danger">Please enter Captcha Code</div>','captcha'=>CaptchaCode()]);
+    exit;
+}
+if (!hash_equals($sessionCode,$enqcode)) {
+    echo json_encode(['status'=>false,'msg'=>'<div class="alert alert-danger">Invalid Captcha Code. Please try again.</div>','captcha'=>CaptchaCode()]);
+    exit;
+}
+unset($_SESSION['capcode']);
 
 $name       = (!empty($_POST['name']))?FilterInput(strval($_POST['name'])):null;
 $phone      = (!empty($_POST['phone']))?FilterInput(strval($_POST['phone'])):null;
@@ -119,7 +132,7 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'support@dailytrades.in';
-    $mail->Password = 'rgev uxjf hfcx yanp'; 
+    $mail->Password = 'XXXX XXXXX'; 
     $mail->SMTPSecure = 'ssl'; // or 'tls' if using port 587
     $mail->Port = 465;
     // Sender & Recipient

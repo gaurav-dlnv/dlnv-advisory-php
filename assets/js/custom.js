@@ -1,20 +1,19 @@
-$(".bn-form").on('submit',(function(e){
+$(document).on('submit', '.bn-form', function(e){
 e.preventDefault();
-var url="_validation";
-var data = new FormData(this);
-data.append("operation","addnewenq");
-$.ajax({type:"POST",url:url,data:data,contentType:false,cache:false,processData:false,dataType:"json",timeout:10000, 
-beforeSend: function(){$('.actionbtn').addClass('eventbtn');},
-error:function(jqXHR,textStatus,errorThrown){
+var form=this;
+var data=new FormData(form);
+data.append('operation','addnewenq');
+$.ajax({type:'POST',url:'_validation',data:data,contentType:false,cache:false,processData:false,dataType:'json',timeout:10000,
+beforeSend:function(){$('.actionbtn').addClass('eventbtn');$(form).find('.rmsg').html('');},
+error:function(){$('.actionbtn').removeClass('eventbtn');$(form).find('.rmsg').html('<div class="alert alert-danger">Something wrong, please try later.</div>');},
+success:function(res){
 $('.actionbtn').removeClass('eventbtn');
-$(".rmsg").html('<div class="alert alert-danger">Something wrong try later</div>');
-},
-success: function(res){
-$('.actionbtn').removeClass('eventbtn');
-if(res.status){$(".bn-form").trigger("reset");location.href="thank-you";}else{$(".rmsg").html(res.msg);}
+if(res.captcha){$('.capimg').attr('src',res.captcha);$('input[name="enqcode"]').val('');}
+if(res.status){form.reset();location.href='thank-you';}
+else{$(form).find('.rmsg').html(res.msg||'<div class="alert alert-danger">Unable to submit the form.</div>');}
 }
 });
-}));
+});
 
     var loader = function() {
         
